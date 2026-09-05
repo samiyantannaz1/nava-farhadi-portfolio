@@ -1,33 +1,32 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-
-import { navigation } from '@/data/navigation'
-import { useLanguage } from '@/hooks/useLanguage'
-import { useOffcanvas } from '@/hooks/useOffcanvas'
-import { useTheme } from '@/hooks/useTheme'
+import { navigation } from "@/data/navigation";
+import { useLanguage } from "@/hooks/useLanguage";
+import { useOffcanvas } from "@/hooks/useOffcanvas";
+import { useTheme } from "@/hooks/useTheme";
 
 export default function Header() {
-  const router = useRouter()
+  const router = useRouter();
 
-  const { language, toggleLanguage } = useLanguage()
-  const { toggleMenu } = useOffcanvas()
-  const { theme, toggleTheme } = useTheme()
+  const { language, toggleLanguage } = useLanguage();
+  const { toggleMenu } = useOffcanvas();
+  const { theme, toggleTheme } = useTheme();
 
   const isActive = (href: string) => {
-    if (href === '/') {
-      return router.pathname === '/'
+    if (href === "/") {
+      return router.pathname === "/";
     }
 
-    if (href === '/#projects') {
+    if (href === "/#projects") {
       return (
-        router.pathname === '/projects/[slug]' ||
-        router.pathname.startsWith('/projects')
-      )
+        router.pathname === "/projects/[slug]" ||
+        router.pathname.startsWith("/projects")
+      );
     }
 
-    return router.pathname === href
-  }
+    return router.pathname === href;
+  };
 
   return (
     <header className="relative flex h-25 items-center px-6 md:px-10">
@@ -41,7 +40,7 @@ export default function Header() {
             tracking-[0.12em]
             text-foreground
             transition-colors
-            duration-300
+            duration-150
             hover:text-accent
             md:text-2xl
             lg:text-[26px]
@@ -54,10 +53,10 @@ export default function Header() {
       {/* Desktop Navigation */}
       <nav
         className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex"
-        dir={language === 'fa' ? 'rtl' : 'ltr'}
+        dir={language === "fa" ? "rtl" : "ltr"}
       >
         {navigation.map((item) => {
-          const active = isActive(item.href)
+          const active = isActive(item.href);
 
           return (
             <Link
@@ -67,19 +66,19 @@ export default function Header() {
                 whitespace-nowrap
                 text-base
                 font-medium
-                transition-all
+                transition-colors
                 duration-300
                 lg:text-[17px]
                 ${
                   active
-                    ? 'text-accent'
-                    : 'text-foreground hover:text-accent'
+                    ? "text-accent"
+                    : "text-foreground hover:text-accent"
                 }
               `}
             >
               {item.label[language]}
             </Link>
-          )
+          );
         })}
       </nav>
 
@@ -99,12 +98,13 @@ export default function Header() {
             tracking-[0.08em]
             text-foreground
             transition-colors
-            duration-300
+            duration-150
             hover:text-accent
+            active:text-yellow-500
             lg:text-lg
           "
         >
-          {language === 'en' ? 'FA' : 'EN'}
+          {language === "en" ? "FA" : "EN"}
         </button>
 
         {/* Theme */}
@@ -117,12 +117,13 @@ export default function Header() {
             font-medium
             text-foreground
             transition-colors
-            duration-300
+            duration-150
             hover:text-accent
+            active:text-yellow-500
             lg:text-3xl
           "
         >
-          {theme === 'light' ? '☼' : '☾'}
+          {theme === "light" ? "☼" : "☾"}
         </button>
       </div>
 
@@ -144,16 +145,18 @@ export default function Header() {
           onClick={toggleLanguage}
           aria-label="Change language"
           className="
+            touch-manipulation
             text-sm
             font-semibold
             tracking-[0.06em]
             text-foreground
             transition-colors
-            duration-300
+            duration-150
             hover:text-accent
+            active:text-yellow-500
           "
         >
-          {language === 'en' ? 'FA' : 'EN'}
+          {language === "en" ? "FA" : "EN"}
         </button>
 
         {/* Theme */}
@@ -162,16 +165,18 @@ export default function Header() {
           onClick={toggleTheme}
           aria-label="Change theme"
           className="
+            touch-manipulation
             text-2xl
             font-medium
             leading-none
             text-foreground
             transition-colors
-            duration-300
+            duration-150
             hover:text-accent
+            active:text-yellow-500
           "
         >
-          {theme === 'light' ? '☼' : '☾'}
+          {theme === "light" ? "☼" : "☾"}
         </button>
 
         {/* Menu */}
@@ -180,18 +185,19 @@ export default function Header() {
           onClick={toggleMenu}
           aria-label="Open menu"
           className="
+            touch-manipulation
             text-xl
             leading-none
             text-foreground
             transition-colors
-            duration-300
+            duration-150
             hover:text-accent
+            active:text-yellow-500
           "
         >
           ☰
         </button>
       </div>
     </header>
-  )
+  );
 }
-

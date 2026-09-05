@@ -1,3 +1,4 @@
+
 'use client'
 
 import Link from 'next/link'
@@ -132,7 +133,42 @@ export default function ProjectCard({
         </div>
 
         {/* -------------------------------- */}
-        {/* Image Reveal */}
+        {/* Mobile Image */}
+        {/* -------------------------------- */}
+
+        <div
+          className="
+            absolute
+            bottom-0
+            right-0
+            z-20
+            h-[62%]
+            w-[72%]
+            overflow-hidden
+            md:hidden
+          "
+        >
+          <Image
+            src={assetPath(project.image)}
+            alt={project.title}
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+
+          {/* Image Overlay */}
+
+          <div
+            className="
+              absolute
+              inset-0
+              bg-black/10
+            "
+          />
+        </div>
+
+        {/* -------------------------------- */}
+        {/* Desktop Image Reveal */}
         {/* -------------------------------- */}
 
         <motion.div
@@ -155,9 +191,11 @@ export default function ProjectCard({
             bottom-0
             right-0
             z-20
+            hidden
             h-[62%]
             w-[72%]
             overflow-hidden
+            md:block
           "
         >
           <Image
@@ -253,3 +291,4 @@ export default function ProjectCard({
     </Link>
   )
 }
+

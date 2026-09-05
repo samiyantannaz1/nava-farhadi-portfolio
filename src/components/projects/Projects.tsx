@@ -1,3 +1,4 @@
+
 'use client'
 
 import { motion } from 'framer-motion'
@@ -19,7 +20,7 @@ export default function Projects() {
         overflow-hidden
         bg-background
         px-6
-        py-24
+        py-14
         text-foreground
         md:px-10
         md:py-32
@@ -104,16 +105,17 @@ export default function Projects() {
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
-            mt-20
+            mt-10
             h-px
             origin-left
             bg-foreground/10
+            md:mt-20
           "
         />
 
         {/* Project Gallery */}
 
-        <div className="mt-16">
+        <div className="mt-10 md:mt-16">
           <ProjectGallery />
         </div>
 
@@ -121,3 +123,4 @@ export default function Projects() {
     </section>
   )
 }
+

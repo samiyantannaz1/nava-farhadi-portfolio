@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function ThemeProvider({ children }: Props) {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark')
 
   useEffect(() => {
     const root = document.documentElement
