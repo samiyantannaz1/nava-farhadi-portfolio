@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import type { Project as ProjectData } from '@/data/projects'
+import { assetPath } from '@/lib/assetPath'
 
 interface ProjectCardData extends ProjectData {
   title: string
@@ -160,7 +161,7 @@ export default function ProjectCard({
           "
         >
           <Image
-            src={project.image}
+            src={assetPath(project.image)}
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, 25vw"

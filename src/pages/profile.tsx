@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { assetPath } from '@/lib/assetPath'
 import { motion } from 'framer-motion'
 
 import { translations } from '@/locales'
@@ -113,7 +114,7 @@ export default function ProfilePage() {
                 "
               >
                 <Image
-                  src="/images/profile/nava-farhadi.png"
+                  src={assetPath("/images/profile/nava-farhadi.png")}
                   alt={text.name}
                   fill
                   priority

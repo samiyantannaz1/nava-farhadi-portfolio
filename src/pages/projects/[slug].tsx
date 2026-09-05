@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { assetPath } from '@/lib/assetPath'
 
 import { translations } from '@/locales'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -385,7 +386,7 @@ export default function ProjectDetailPage() {
             "
           >
             <Image
-              src={project.gallery[0]}
+              src={assetPath(project.gallery[0])}
               alt={project.title}
               fill
               priority
@@ -653,7 +654,7 @@ export default function ProjectDetailPage() {
                   `}
                 >
                   <Image
-                    src={image}
+                    src={assetPath(image)}
                     alt={`${project.title} ${index + 2}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 82vw"
