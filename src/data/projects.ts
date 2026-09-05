@@ -11,7 +11,7 @@ export const projects: Project[] = [
   {
     id: 1,
     slug: 'universite',
-    image: '/images/projects/universite/cover.png',
+    image: '/images/projects/universite/01.png',
     href: '/projects/universite',
     location: 'Paris · France',
     area: '200 m²',
