@@ -1,13 +1,12 @@
 import type { NextConfig } from "next";
 
-const isProduction = process.env.NODE_ENV === "production";
+const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  output: "export",
-
-  ...(isProduction && {
+  ...(isGitHubPages && {
+    output: "export",
     basePath: "/nava-farhadi-portfolio",
   }),
 
