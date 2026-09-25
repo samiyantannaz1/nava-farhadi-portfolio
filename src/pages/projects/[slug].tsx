@@ -1,4 +1,5 @@
-import { useRouter } from 'next/router'
+﻿import { useRouter } from 'next/router'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -129,7 +130,7 @@ export default function ProjectDetailPage() {
 
       {/* ==================================================
           PROJECT HERO
-          هیرو و معرفی اصلی پروژه
+          Ù‡ÛŒØ±Ùˆ Ùˆ Ù…Ø¹Ø±ÙÛŒ Ø§ØµÙ„ÛŒ Ù¾Ø±ÙˆÚ˜Ù‡
       ================================================== */}
 
       <section
@@ -168,7 +169,7 @@ export default function ProjectDetailPage() {
                 hover:text-accent
               "
             >
-              {isFa ? 'بازگشت به پروژه‌ها' : 'Back to Projects'}
+              {isFa ? 'Ø¨Ø§Ø²Ú¯Ø´Øª Ø¨Ù‡ Ù¾Ø±ÙˆÚ˜Ù‡â€ŒÙ‡Ø§' : 'Back to Projects'}
             </Link>
 
             <span
@@ -270,7 +271,7 @@ export default function ProjectDetailPage() {
                       text-foreground/35
                     "
                   >
-                    {isFa ? 'مساحت' : 'Area'}
+                    {isFa ? 'Ù…Ø³Ø§Ø­Øª' : 'Area'}
                   </p>
 
                   <p
@@ -294,7 +295,7 @@ export default function ProjectDetailPage() {
                       text-foreground/35
                     "
                   >
-                    {isFa ? 'سال' : 'Year'}
+                    {isFa ? 'Ø³Ø§Ù„' : 'Year'}
                   </p>
 
                   <p
@@ -318,7 +319,7 @@ export default function ProjectDetailPage() {
                       text-foreground/35
                     "
                   >
-                    {isFa ? 'نوع' : 'Type'}
+                    {isFa ? 'Ù†ÙˆØ¹' : 'Type'}
                   </p>
 
                   <p
@@ -342,7 +343,7 @@ export default function ProjectDetailPage() {
                       text-foreground/35
                     "
                   >
-                    {isFa ? 'دسته‌بندی' : 'Category'}
+                    {isFa ? 'Ø¯Ø³ØªÙ‡â€ŒØ¨Ù†Ø¯ÛŒ' : 'Category'}
                   </p>
 
                   <p
@@ -406,7 +407,7 @@ export default function ProjectDetailPage() {
 
       {/* ==================================================
           PROJECT DESCRIPTION
-          معرفی و توضیحات پروژه
+          Ù…Ø¹Ø±ÙÛŒ Ùˆ ØªÙˆØ¶ÛŒØ­Ø§Øª Ù¾Ø±ÙˆÚ˜Ù‡
       ================================================== */}
 
       <section
@@ -453,7 +454,7 @@ export default function ProjectDetailPage() {
                 text-accent
               "
             >
-              {isFa ? 'پروژه' : 'Project'}
+              {isFa ? 'Ù¾Ø±ÙˆÚ˜Ù‡' : 'Project'}
             </p>
           </motion.div>
 
@@ -494,7 +495,7 @@ export default function ProjectDetailPage() {
 
       {/* ==================================================
           PROJECT CONCEPT
-          کانسپت پروژه
+          Ú©Ø§Ù†Ø³Ù¾Øª Ù¾Ø±ÙˆÚ˜Ù‡
       ================================================== */}
 
       <section
@@ -527,7 +528,7 @@ export default function ProjectDetailPage() {
               text-accent
             "
           >
-            {isFa ? 'کانسپت' : 'Concept'}
+            {isFa ? 'Ú©Ø§Ù†Ø³Ù¾Øª' : 'Concept'}
           </p>
 
 
@@ -567,7 +568,7 @@ export default function ProjectDetailPage() {
 
       {/* ==================================================
           PROJECT GALLERY
-          گالری تصاویر پروژه
+          Ú¯Ø§Ù„Ø±ÛŒ ØªØµØ§ÙˆÛŒØ± Ù¾Ø±ÙˆÚ˜Ù‡
       ================================================== */}
 
       <section
@@ -600,7 +601,7 @@ export default function ProjectDetailPage() {
                 text-accent
               "
             >
-              {isFa ? 'گالری' : 'Gallery'}
+              {isFa ? 'Ú¯Ø§Ù„Ø±ÛŒ' : 'Gallery'}
             </p>
 
             <span
@@ -677,7 +678,7 @@ export default function ProjectDetailPage() {
 
       {/* ==================================================
           PROJECT NAVIGATION
-          جابه‌جایی بین پروژه‌ها
+          Ø¬Ø§Ø¨Ù‡â€ŒØ¬Ø§ÛŒÛŒ Ø¨ÛŒÙ† Ù¾Ø±ÙˆÚ˜Ù‡â€ŒÙ‡Ø§
       ================================================== */}
 
       <section
@@ -725,7 +726,7 @@ export default function ProjectDetailPage() {
                     text-foreground/35
                   "
                 >
-                  {isFa ? 'پروژه قبلی' : 'Previous Project'}
+                  {isFa ? 'Ù¾Ø±ÙˆÚ˜Ù‡ Ù‚Ø¨Ù„ÛŒ' : 'Previous Project'}
                 </p>
 
                 <div
@@ -759,7 +760,7 @@ export default function ProjectDetailPage() {
                       group-hover:-translate-x-1
                     "
                   >
-                    {isFa ? '→' : '←'}
+                    {isFa ? 'â†’' : 'â†'}
                   </span>
                 </div>
               </Link>
@@ -795,7 +796,7 @@ export default function ProjectDetailPage() {
                     text-foreground/35
                   "
                 >
-                  {isFa ? 'پروژه بعدی' : 'Next Project'}
+                  {isFa ? 'Ù¾Ø±ÙˆÚ˜Ù‡ Ø¨Ø¹Ø¯ÛŒ' : 'Next Project'}
                 </p>
 
                 <div
@@ -815,7 +816,7 @@ export default function ProjectDetailPage() {
                       group-hover:translate-x-1
                     "
                   >
-                    {isFa ? '←' : '→'}
+                    {isFa ? 'â†' : 'â†’'}
                   </span>
 
                   <h3
@@ -843,7 +844,7 @@ export default function ProjectDetailPage() {
 
       {/* ==================================================
           BACK TO PROJECTS
-          بازگشت به لیست پروژه‌ها
+          Ø¨Ø§Ø²Ú¯Ø´Øª Ø¨Ù‡ Ù„ÛŒØ³Øª Ù¾Ø±ÙˆÚ˜Ù‡â€ŒÙ‡Ø§
       ================================================== */}
 
       <section
@@ -881,11 +882,11 @@ export default function ProjectDetailPage() {
                 group-hover:-translate-x-1
               "
             >
-              {isFa ? '→' : '←'}
+              {isFa ? 'â†’' : 'â†'}
             </span>
 
             {isFa
-              ? 'بازگشت به پروژه‌ها'
+              ? 'Ø¨Ø§Ø²Ú¯Ø´Øª Ø¨Ù‡ Ù¾Ø±ÙˆÚ˜Ù‡â€ŒÙ‡Ø§'
               : 'Back to Projects'}
           </Link>
 
@@ -895,3 +896,24 @@ export default function ProjectDetailPage() {
     </main>
   )
 }
+
+
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { slug: 'universite' } },
+      { params: { slug: 'stoneford-cottage' } },
+      { params: { slug: 'oxford-road-estate' } },
+      { params: { slug: 'villa-saint-tropez' } },
+    ],
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+  }
+}
+
