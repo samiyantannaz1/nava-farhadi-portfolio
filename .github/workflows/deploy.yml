@@ -1,3 +1,4 @@
+
 name: Deploy Next.js to GitHub Pages
 
 on:
@@ -29,7 +30,10 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: |
+          echo "GITHUB_ACTIONS=$GITHUB_ACTIONS"
+          echo "NEXT_PUBLIC_BASE_PATH=$NEXT_PUBLIC_BASE_PATH"
+          npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -51,3 +55,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
